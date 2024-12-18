@@ -1,8 +1,10 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS  # 追加
 import json
 import math
 
 app = Flask(__name__)
+CORS(app)
 
 with open('data/drugs.json', 'r', encoding='utf-8') as f:
     DRUGS_DATA = json.load(f)
@@ -15,9 +17,9 @@ def get_drugs():
 def get_drug_curve():
     # クエリパラメータ: name, duration_hoursなど
     name = request.args.get("name", None)
-    duration = float(request.args.get("duration", 24))  # デフォルト24時間分など
-    intervals = int(request.args.get("intervals", 100)) # 分解数
-    
+    duration = float(request.args.get("duration", 24))  # デフォルト24時間分
+    intervals = int(request.args.get("intervals", 100))  # 分解数
+
     drug = next((d for d in DRUGS_DATA if d["name"] == name), None)
     if not drug:
         return jsonify({"error": "Drug not found"}), 404
@@ -25,7 +27,7 @@ def get_drug_curve():
     tmax = drug["tmax_h"]
     half_life = drug["half_life_h"]
     cmax = drug["cmax_ng_ml"]
-    
+
     times = [i * (duration / intervals) for i in range(intervals + 1)]
     concentrations = []
     for t in times:
@@ -36,7 +38,7 @@ def get_drug_curve():
             # 半減期に沿った指数減衰
             c = cmax * (0.5 ** ((t - tmax) / half_life))
         concentrations.append(c)
-    
+
     return jsonify({
         "times": times,
         "concentrations": concentrations

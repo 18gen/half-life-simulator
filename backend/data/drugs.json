@@ -1,0 +1,59 @@
+[
+    {
+      "name": "カフェイン",
+      "dose_mg": 60,
+      "tmax_h": 1.2,
+      "half_life_h": 6.6,
+      "cmax_ng_ml": 8200
+    },
+    {
+      "name": "アセトアミノフェン",
+      "dose_mg": 400,
+      "tmax_h": 0.46,
+      "half_life_h": 2.36,
+      "cmax_ng_ml": 9100
+    },
+    {
+      "name": "イブプロフェン",
+      "dose_mg": 200,
+      "tmax_h": 2.1,
+      "half_life_h": 3.4,
+      "cmax_ng_ml": 16600
+    },
+    {
+      "name": "ロキソプロフェンナトリウム",
+      "dose_mg": 60,
+      "tmax_h": 0.45,
+      "half_life_h": 1.22,
+      "cmax_ng_ml": 5040
+    },
+    {
+      "name": "エピナスチン塩酸塩",
+      "dose_mg": 20,
+      "tmax_h": 1.9,
+      "half_life_h": 12.1,
+      "cmax_ng_ml": 33000
+    },
+    {
+      "name": "ロラタジン",
+      "dose_mg": 10,
+      "tmax_h": 1.6,
+      "half_life_h": 14.3,
+      "cmax_ng_ml": 7730
+    },
+    {
+      "name": "フェキソフェナジン塩酸塩",
+      "dose_mg": 60,
+      "tmax_h": 2.2,
+      "half_life_h": 9.6,
+      "cmax_ng_ml": 248
+    },
+    {
+      "name": "セチリジン塩酸塩",
+      "dose_mg": 20,
+      "tmax_h": 1.50,
+      "half_life_h": 6.79,
+      "cmax_ng_ml": 438
+    }
+  ]
+  
